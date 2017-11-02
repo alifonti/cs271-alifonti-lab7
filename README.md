@@ -2,29 +2,24 @@
 
 **Question 1**
 
-*(Why does `LinkedStack` not require an explicit constructor?)*
+*(What is the purpose of the various auxiliary methods populateList, populateFifoList, and ReverseLines.printReverse?)*
 
-- It does not require a constructor because any new stack starts as empty and does not need any arguments to be created.
+- To allow a recursive implementation of these methods without requiring to enter the arguments used in the recursive method.
 
 **Question 2**
 
-*(What is the time and (extra) space complexity of each of the `LinkedStack` methods, as well as `ReverseLines.main`?)*
+*(Why do these methods need to have arguments, and how does the argument change from one recursive call to the next?)*
 
-- The LinkedStack methods are of complexity O(1), except for asList(), which is O(n). The ReverseLines main is O(n).
+- To allow the method to progress through the stack or lines instead of repeating the same calculations.
 
 **Question 3**
 
-*(How else (not using `Node`) could we have implemented `LinkedStack` in such a way that it is still based on a linked list but the `asList` method uses constant time and space?)*
+*(What are the time and space complexity of each of the populateList populateFifoList methods, as well as ReverseLines.printReverse?)*
 
-- We could have preallocated space for the elements and stored the stack in an array.
+- The complexity of `populateList` and `populateFifoList` are O(n), and `ReverseLines.printReverse` is O(n), too.
 
 **Question 4**
 
-*(Is it better for `push` and `pop` to return the item or the stack itself? Briefly discuss the pros and cons of each design.)*
+*(Which of these methods can be implemented using while loops?)*
 
-- *Push/Pop*
-- Pro: It, specifically in the case of `pop`, is the easiest and more direct way to manipulate and use an element retrieved from the stack (and saves memory).
-- Con: It takes an extra step to utilize the whole stack after adding/removing, as opposed to running the method and getting the whole stack in return to be used.
-- *Stack*
-- Pro: Allows quicker access to the entire stack after pushing or popping a new element.
-- Cons: Makes retrieving a removed/popped element more complicated.
+- Both `populateList` and `populateFifoList` can be implemented using loops.
